@@ -1,7 +1,7 @@
 HRM Bar
 ===
 
-Simple heart rate monitor (HRM) CLI built using the community-maintained (previously abandoned) [noble](https://github.com/abandonware/noble) project.
+Simple heart rate monitor (HRM) CLI built using the community-maintained [@abandonware/noble](https://github.com/abandonware/noble) project.
 
 ## Prerequesites
 You will need to have a ready-to-pair HRM within BLE range of your computer.
