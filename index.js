@@ -15,7 +15,7 @@ const main = async () => {
 
   noble.on("stateChange", async (state) => {
     if (state === "poweredOn") {
-      console.log("Finding to your heart rate monitor...");
+      console.log("Finding your heart rate monitor...");
       await noble.startScanningAsync([HRM_SERVICE_UUID], false);
     }
   });
