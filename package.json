@@ -1,6 +1,6 @@
 {
   "name": "hrmbar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple heart rate monitor (HRM) CLI built using the community-maintained @abandonware/noble project.",
   "type": "module",
   "main": "index.js",
