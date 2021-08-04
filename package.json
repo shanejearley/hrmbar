@@ -12,9 +12,14 @@
   "bin": {
     "hrmline": "./index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["heart", "rate", "command", "line", "interface", "hrm", "cli"],
+  "author": "shanejearley",
+  "homepage": "https://github.com/shanejearley/hrmline#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shanejearley/hrmline.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "@abandonware/noble": "^1.9.2-14",
     "asciichart": "^1.5.25",
