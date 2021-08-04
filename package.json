@@ -1,6 +1,6 @@
 {
   "name": "hrmline",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple heart rate monitor (HRM) CLI built using the community-maintained @abandonware/noble project.",
   "type": "module",
   "main": "index.js",
