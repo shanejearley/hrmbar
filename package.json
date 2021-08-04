@@ -1,6 +1,6 @@
 {
   "name": "hrmline",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple heart rate monitor (HRM) CLI.",
   "type": "module",
   "main": "index.js",
