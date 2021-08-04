@@ -1,21 +1,20 @@
-HRM Bar
+HRM Line
 ===
 
 Simple heart rate monitor (HRM) CLI built using the community-maintained [@abandonware/noble](https://github.com/abandonware/noble) project.
 
-![HRM Bar Screenshot](hrmbar_screenshot.png)
+![HRM Line Screenshot](hrmline_screenshot.png)
 
 ## Prerequisites
 You will need to have a ready-to-pair HRM within BLE range of your computer.
 
 ## Usage
 ```
-npm i -g hrmbar && hrmbar
+npm i -g hrmline && hrmline
 ```
 
 ## To Do
-- Offer multiple view options
-- Offer multiple metric options, including heart rate variability (HRV)
+- Offer more real-time metrics, including heart rate variability (HRV)
 - Parse Uint16 values with care
 
 ## Contributing

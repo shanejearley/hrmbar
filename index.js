@@ -1,17 +1,28 @@
 #!/usr/bin/env node
 
 import noble from "@abandonware/noble";
-
-const BAR = "\u2588"
-const HEART = "\u2665"
-const FG_RED = "\x1b[31m";
-const FG_RESET = "\x1b[0m";
+import { plot } from "asciichart";
 
 const HRM_SERVICE_UUID = "180D";
 const HRM_CHARACTERISTIC_UUID = "2A37";
 
 const main = async () => {
   let connected = false;
+  let heartRates = [];
+  let displayHeartRates = [];
+  let windowHeight = process.stdout.rows;
+  let windowWidth = process.stdout.columns;
+  const maxWindowWidth = 300;
+
+  const plotConfig = {
+    height: windowHeight - 5,
+  }
+
+  process.stdout.on('resize', () => {
+    // getWindowSize() returns [width, height]
+    ({ [0]: windowWidth, [1]: windowHeight } = process.stdout.getWindowSize());
+    plotConfig.height = windowHeight - 5;
+  });
 
   noble.on("stateChange", async (state) => {
     if (state === "poweredOn") {
@@ -32,23 +43,40 @@ const main = async () => {
         const characteristic = characteristics[0];
         characteristic.subscribe();
         characteristic.on("data", (data) => {
-          const flag = data[0].toString(2).charAt(0);
-          if (flag === "0") {
-            // HR is Uint8Array at index 1
-            const heartRate = data[1]
-            console.log(BAR.repeat(heartRate), FG_RED, heartRate, "bpm", HEART, FG_RESET);
-          } else {
-            // HR is Uint16Array at index 1 and 2
-            // Todo: handle this accordingly
-            const heartRate = data[1].toString()
-            console.log(BAR.repeat(heartRate), FG_RED, heartRate, "bpm", HEART, FG_RESET);
+
+          const heartRate = parseHeartRate(data);
+
+          // Fill an empty heartrates array
+          if (!heartRates.length) {
+            heartRates = new Array(maxWindowWidth).fill(heartRate);
           }
+
+          // Cycle heartrates array
+          heartRates.push(heartRate);
+          heartRates.shift();
+          displayHeartRates = heartRates.slice(heartRates.length - windowWidth + 25);
+
+          // Update display
+          console.clear();
+          console.log('\u001b[3J\u001b[1J' + plot(displayHeartRates, plotConfig));
         });
       } else {
         await peripheral.disconnectAsync();
       }
     }
   });
+
+  const parseHeartRate = (data) => {
+    const flag = data[0].toString(2).charAt(0);
+    if (flag === "0") {
+      // HR is Uint8Array at index 1
+      return parseInt(data[1])
+    } else {
+      // HR is Uint16Array at index 1 and 2
+      // Todo: handle this accordingly
+      return parseInt(data[1])
+    }
+  }
 
   setTimeout(() => {
     if (!connected) {

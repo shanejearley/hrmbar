@@ -1,5 +1,5 @@
 {
-  "name": "hrmbar",
+  "name": "hrmline",
   "version": "0.0.4",
   "description": "Simple heart rate monitor (HRM) CLI built using the community-maintained @abandonware/noble project.",
   "type": "module",
@@ -10,13 +10,14 @@
     "release": "release-it"
   },
   "bin": {
-    "hrmbar": "./index.js"
+    "hrmline": "./index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@abandonware/noble": "^1.9.2-14"
+    "@abandonware/noble": "^1.9.2-14",
+    "asciichart": "^1.5.25"
   },
   "devDependencies": {
     "auto-changelog": "^2.3.0",
