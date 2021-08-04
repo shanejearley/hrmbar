@@ -1,7 +1,12 @@
 HRM Line
 ===
 
-Simple heart rate monitor (HRM) CLI built using three awesome projects –[@abandonware/noble](https://github.com/abandonware/noble) [asciichart](https://github.com/kroitor/asciichart) and [figlet](https://github.com/patorjk/figlet.js).
+Simple heart rate monitor (HRM) CLI.
+
+Built using three awesome projects:
+- [@abandonware/noble](https://github.com/abandonware/noble) 
+- [asciichart](https://github.com/kroitor/asciichart)
+- [figlet](https://github.com/patorjk/figlet.js)
 
 ![HRM Line Screen Recording](hrmline_screen_recording.gif)
 
