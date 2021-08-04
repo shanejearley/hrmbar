@@ -2,6 +2,8 @@
 
 import noble from "@abandonware/noble";
 import { plot } from "asciichart";
+import figlet from 'figlet';
+const { textSync } = figlet;
 
 const HRM_SERVICE_UUID = "180D";
 const HRM_CHARACTERISTIC_UUID = "2A37";
@@ -10,18 +12,19 @@ const main = async () => {
   let connected = false;
   let heartRates = [];
   let displayHeartRates = [];
+  let displayPadding = '\u0020\u0020\u0020\u0020\u0020\u0020' // 6 spaces
   let windowHeight = process.stdout.rows;
   let windowWidth = process.stdout.columns;
   const maxWindowWidth = 300;
 
   const plotConfig = {
-    height: windowHeight - 5,
+    height: windowHeight - 10,
   }
 
   process.stdout.on('resize', () => {
     // getWindowSize() returns [width, height]
     ({ [0]: windowWidth, [1]: windowHeight } = process.stdout.getWindowSize());
-    plotConfig.height = windowHeight - 5;
+    plotConfig.height = windowHeight - 10;
   });
 
   noble.on("stateChange", async (state) => {
@@ -58,7 +61,7 @@ const main = async () => {
 
           // Update display
           console.clear();
-          console.log('\u001b[3J\u001b[1J' + plot(displayHeartRates, plotConfig));
+          console.log('\u001b[3J\u001b[1J' + textSync('HRM Line', { horizontalLayout: 'full' }) + '\u2661\n' + displayPadding + 'BPM\n' + plot(displayHeartRates, plotConfig));
         });
       } else {
         await peripheral.disconnectAsync();

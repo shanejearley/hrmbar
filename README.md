@@ -3,7 +3,7 @@ HRM Line
 
 Simple heart rate monitor (HRM) CLI built using the community-maintained [@abandonware/noble](https://github.com/abandonware/noble) project.
 
-![HRM Line Screenshot](hrmline_screenshot.png)
+![HRM Line Screen Recording](hrmline_screen_recording_.gif)
 
 ## Prerequisites
 You will need to have a ready-to-pair HRM within BLE range of your computer.
