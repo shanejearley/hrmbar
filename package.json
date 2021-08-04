@@ -1,6 +1,6 @@
 {
   "name": "hrmline",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple heart rate monitor (HRM) CLI.",
   "type": "module",
   "main": "index.js",
@@ -12,7 +12,15 @@
   "bin": {
     "hrmline": "./index.js"
   },
-  "keywords": ["heart", "rate", "command", "line", "interface", "hrm", "cli"],
+  "keywords": [
+    "heart",
+    "rate",
+    "command",
+    "line",
+    "interface",
+    "hrm",
+    "cli"
+  ],
   "author": "shanejearley",
   "homepage": "https://github.com/shanejearley/hrmline#readme",
   "repository": {
