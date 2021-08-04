@@ -15,6 +15,7 @@ npm i -g hrmline && hrmline
 
 ## To Do
 - Offer more real-time metrics, including heart rate variability (HRV)
+- Handle disconnected device gracefully
 - Parse Uint16 values with care
 
 ## Contributing
