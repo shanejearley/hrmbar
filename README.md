@@ -6,8 +6,8 @@ Simple heart rate monitor (HRM) CLI.
 ![HRM Live Screen Recording](hrmlive_screen_recording.gif)
 
 ## About
-Provides a live-updating view of HRM-reported heart rates and calculated heart rate variability (HRV).
-HRV is calculated using the root mean square of successive differences (RMSSD) of the HRM-reported heartbeat peak-to-peak (RR) intervals (and taking the natural log multiplied by ten, to put the HRV in a similar range as the heart rate).
+Provides a live-updating view of heart rate and heart rate variability (HRV).
+HRV is calculated using the root mean square of successive differences (RMSSD) of peak-to-peak (RR) intervals and taking the natural log multiplied by ten (to put HRV in a similar range as heart rate).
 
 Built using three awesome projects:
 - [@abandonware/noble](https://github.com/abandonware/noble) 
