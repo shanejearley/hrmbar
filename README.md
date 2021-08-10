@@ -1,9 +1,13 @@
-HRM Line
+HRM Live
 ===
 
 Simple heart rate monitor (HRM) CLI.
 
-![HRM Line Screen Recording](hrmline_screen_recording.gif)
+![HRM Live Screen Recording](hrmlive_screen_recording.gif)
+
+## About
+Provides a live-updating view of HRM-reported heart rates and calculated heart rate variability (HRV).
+HRV is calculated using the root mean square of successive differences (RMSSD) of the HRM-reported heartbeat peak-to-peak (RR) intervals (and taking the natural log multiplied by ten, to put the HRV in a similar range as the heart rate).
 
 Built using three awesome projects:
 - [@abandonware/noble](https://github.com/abandonware/noble) 
@@ -15,11 +19,10 @@ You will need to have a ready-to-pair HRM within BLE range of your computer.
 
 ## Usage
 ```
-npm i -g hrmline && hrmline
+npm i -g hrmlive && hrmlive
 ```
 
 ## To Do
-- Offer more real-time metrics, including heart rate variability (HRV)
 - Handle disconnected device gracefully
 - Parse Uint16 values with care
 

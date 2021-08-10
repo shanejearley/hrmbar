@@ -1,5 +1,5 @@
 {
-  "name": "hrmline",
+  "name": "hrmlive",
   "version": "0.0.8",
   "description": "Simple heart rate monitor (HRM) CLI.",
   "type": "module",
@@ -10,7 +10,7 @@
     "release": "release-it"
   },
   "bin": {
-    "hrmline": "./index.js"
+    "hrmlive": "./index.js"
   },
   "keywords": [
     "heart",
@@ -24,10 +24,10 @@
     "cli"
   ],
   "author": "shanejearley",
-  "homepage": "https://github.com/shanejearley/hrmline#readme",
+  "homepage": "https://github.com/shanejearley/hrmlive#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shanejearley/hrmline.git"
+    "url": "https://github.com/shanejearley/hrmlive.git"
   },
   "license": "MIT",
   "dependencies": {
